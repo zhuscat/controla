@@ -16,7 +16,7 @@ export function controlAsyncFunction<R>(
   let aborted = false
   let started = false
 
-  let timeoutId: NodeJS.Timeout | undefined
+  let timeoutId: ReturnType<typeof setTimeout> | undefined
   const safeAbort = (reason: unknown) => {
     if (aborted) return
     aborted = true
